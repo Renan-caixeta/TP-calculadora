@@ -1,4 +1,3 @@
-// main.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,12 +11,11 @@ int main() {
     while (1) {
         printf("\nPosFixa> ");
         if (!fgets(linha, sizeof(linha), stdin)) break;
-        // remove newline
+        
         size_t L = strlen(linha);
         if (L > 0 && (linha[L-1] == '\n' || linha[L-1] == '\r')) linha[--L] = '\0';
         if (L == 0) break;
 
-        // Duplicate because functions may modify the string
         char copia1[1024];
         char copia2[1024];
         strncpy(copia1, linha, sizeof(copia1)-1); copia1[sizeof(copia1)-1] = '\0';
